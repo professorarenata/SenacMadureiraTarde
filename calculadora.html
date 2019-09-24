@@ -1,38 +1,13 @@
-<html lang="pt-br">
+<html>
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>Calculadora</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Calculadora</title>
 <script>
-function mostrarData(){
-   var data = Date();
-
-   document.getElementById("data").innerHTML = data
-}
-
-function data(){
-   var diaCompleto= new Date();
-   var diaSemana = diaCompleto.getDay();
-   var dia = diaCompleto.getDate();
-   var mes = diaCompleto.getMonth();
-   var ano = diaCompleto.getFullYear();
-
-   var semana = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
-        
-   var meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro',];
-
-   document.getElementById("data").innerHTML = semana[diaSemana]+", "+dia+" de "+ meses[mes]+" de "+ano;
-}
-
 function mudarBody(cor){
-   document.getElementById("fundo").style.backgroundColor=cor;
+  document.getElementById("fundo").style.backgroundColor=cor;
 }
-
 function soma(form1)
 {
    a=new Number(form1.t1.value);
@@ -40,71 +15,110 @@ function soma(form1)
    c=new Number(a+b);
    alert("A soma dos números é:  "+c);
 }
-
-function subtr(form1)
+function sub(form1)
 {
-  a=new Number(form1.t1.value);
-  b=new Number(form1.t2.value);
-  c=new Number(a-b);
-  alert("A subtração dos números é:  "+c);
+   a=new Number(form1.t1.value);
+   b=new Number(form1.t2.value);
+   c=new Number(a-b);
+   alert("A subtração dos números é:  "+c);
 }
-
-function multp(form1)
+function mult(form1)
 {
-  a=new Number(form1.t1.value);
-  b=new Number(form1.t2.value);
-  c=new Number(a*b);
-  alert("A multiplicação dos números é:  "+c);
+   a=new Number(form1.t1.value);
+   b=new Number(form1.t2.value);
+   c=new Number(a*b);
+   alert("A subtração dos números é:  "+c);
 }
-
-function divis(form1)
+function div(form1)
 {
-  a=new Number(form1.t1.value);
-  b=new Number(form1.t2.value);
-  c=new Number(a/b);
-  alert("A divisão dos números é:  "+c);
+   a=new Number(form1.t1.value);
+   b=new Number(form1.t2.value);
+   c=new Number(a/b);
+   alert("A subtração dos números é:  "+c);
 }
 </script>
-<ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="calculadora.html">Reiniciar</a>
-    </li>
-</ul>
 </head>
-
-<body  id="fundo" onload="data()">
-<center><h1>Calculadora<br><br> </h1>
+<body style="text-align: center" id="fundo">
+  <h1>Calculadora</h1>
   <h3>
 Digite um número:
 <form name="form1">
   <input type="text" name="t1"><br>
   Digite outro número:<br>
   <input type="text" name="t2"><br><br>
-  <input type="button" class="btn btn-dark" name="b1" value="+" onClick="soma(form1)">
-  <input type="button" class="btn btn-dark" name="b2" value="-" onClick="subtr(form1)">
-  <input type="button" class="btn btn-dark" name="b3" value="*" onClick="multp(form1)">
-  <input type="button" class="btn btn-dark" name="b4" value="/" onClick="divis(form1)">
+  <input type="button" name="b1" value="+" onClick="soma(form1)">
+  <input type="button" name="b2" value="-" onclick="sub(form1)">
+  <input type="button" name="b3" value="*" onclick="mult(form1)">
+  <input type="button" name="b4" value="/" onclick="div(form1)">
   <br><br>
-  Escolha a cor da HomePage:<br>
-    <input type="button" class="btn btn-dark" value="Azul" id="fundoazul" name="Azul" onclick="mudarBody('lightblue')" />
-    <input type="button" class="btn btn-dark" value="Rosa" id="fundorosa" name="Rosa" onclick="mudarBody('pink')" />
-    <input type="button" class="btn btn-dark" value="Amarelo" id="fundoamarelo" name="Amarelo" onclick="mudarBody('lightyellow')" />
-    <input type="button" class="btn btn-dark" value="Verde" id="fundoverde" name="Verde" onclick="mudarBody('lightgreen')" />
+  <h4>Escolha a cor de fundo:</h4>
+  <input type="button" class="alert alert-primary" value="Azul" id="fundoazul" name="Azul" onclick="mudarBody('blue')" />
+  <input type="button" value="Cinza" id="fundocinza" class="alert alert-secondary" name="Cinza" onclick="mudarBody('gray')" />
+  <input type="button" value="Amarelo" id="fundoamarelo" name="Amarelo" class="alert alert-warning" onclick="mudarBody('yellow')" />
+  <input type="button" value="Verde" id="fundoverde" name="Verde" class="alert alert-success" onclick="mudarBody('green')" />
   
 </form>
  </h3>
-</br>
-</br>
-</br>
-</br>
-</br>
-<h4>
- <p id="data"></p>
-</h4>
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</div> 
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    var now = new Date();
+    var mName = now.getMonth() +1 ;
+    var dName = now.getDay() +1;
+    var dayNr = now.getDate();
+    var yearNr=now.getYear();
+    if(dName==1) {Day = "Domingo";}
+    if(dName==2) {Day = "Segunda-feira";}
+    if(dName==3) {Day = "Terça-feira";}
+    if(dName==4) {Day = "Quarta-feira";}
+    if(dName==5) {Day = "Quinta-feira";}
+    if(dName==6) {Day = "Sexta-feira";}
+    if(dName==7) {Day = "Sábado";}
+    if(mName==1){Month = "Janeiro";}
+    if(mName==2){Month = "Fevereiro";}
+    if(mName==3){Month = "Março";}
+    if(mName==4){Month = "Abril";}
+    if(mName==5){Month = "Maio";}
+    if(mName==6){Month = "Junho";}
+    if(mName==7){Month = "Julho";}
+    if(mName==8){Month = "Agosto";}
+    if(mName==9){Month = "Setembro";}
+    if(mName==10){Month = "Outubro";}
+    if(mName==11){Month = "Novembro";}
+    if(mName==12){Month = "Dezembro";}
+    if(yearNr < 2000) {Year = 1900 + yearNr;}
+    else {Year = yearNr;}
+    var todaysDate =(" " + Day + ", " + dayNr + "/" + Month + "/" + Year);
+    
+    document.write('  '+todaysDate);
+    
+    </SCRIPT>
+    
+    <span id="Clock">00:00:00</span>
+    
+    <script>
+    var Elem = document.getElementById("Clock");
+    function Horario(){
+        var Hoje = new Date();
+        var Horas = Hoje.getHours();
+        if(Horas < 10){
+            Horas = "0"+Horas;
+        }
+        var Minutos = Hoje.getMinutes();
+        if(Minutos < 10){
+            Minutos = "0"+Minutos;
+        }
+        var Segundos = Hoje.getSeconds();
+        if(Segundos < 10){
+            Segundos = "0"+Segundos;
+        }
+        Elem.innerHTML = Horas+":"+Minutos+":"+Segundos;
+    }
+    window.setInterval("Horario()",1000);
+    </script>
+</body>
+    
 </html>
