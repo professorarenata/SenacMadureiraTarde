@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body id="fundo" onload="escreverMensagem()">
+  <p id="data"></p>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<center><h1 class="alert alert-success">Calculadora <br><br> </h1>
+  <h3>
+Digite um número:
+
+<form name="form1" method="POST">
+  <input type="text" name="t1"><br>
+  Digite outro número:<br>
+
+  <input type="text" name="t2"><br><br>
+  <input type="button" name="b1" value="+" onClick="soma(form1)">
+  <input type="button" name="b2" value="-" onClick="subtracao(form1)">
+  <input type="button" name="b3" value="*" onClick="multiplicacao(form1)">
+  <input type="button" name="b4" value="/" onClick="divisao(form1)">
+  <br><br>
+  Escolha a cor da HomePage:<br><br>
+
+  <input type="button" value="Preto" id="fundoPreto" name="fundoPreto" onclick="mudarBody('black')"/>
+  <input type="button" value="Azul" id="fundoAzul" name="fundoAzul" onclick="mudarBody('blue')"/>
+  <input type="button" value="Dourado" id="fundoDourado" name="fundoDourado" onclick="mudarBody('gold')"/>
+
+<script>
+  function soma(form1)
+  {
+    a=new Number(form1.t1.value);
+    b=new Number(form1.t2.value);
+    c=new Number(a+b);
+      alert("A soma dos números é:  "+c);
+  }
+  function subtracao(form1)
+  {
+    a=new Number(form1.t1.value);
+    b=new Number(form1.t2.value);
+    c=new Number(a-b);
+      alert("A Soma dos números é:  "+c);
+  }
+  function multiplicacao(form1)
+  {
+    a=new Number(form1.t1.value);
+    b=new Number(form1.t2.value);
+    c=new Number(a*b);
+      alert("A Soma dos números é:  "+c);
+  }
+  function divisao(form1)
+  {
+    a=new Number(form1.t1.value);
+    b=new Number(form1.t2.value);
+    c=new Number(a/b);
+      alert("A Soma dos números é:  "+c);
+  }
+  function Hora()
+  {
+    var hora = new Date();
+    if (hora.getHours() > 0 && hora.getHours() < 12)
+      return ("Bom dia!");
+    else if (hora.getHours() >= 12 && hora.getHours() < 18)
+      return ("Boa tarde!");
+    else if (hora.getHours() >= 18 && hora.getHours() < 24)
+      return ("Boa noite!");
+  }
+  function mostrarDataComputador()
+  {
+    var data = Date();
+    document.getElementById("data").innerHTML = data
+  }
+  function mudarBody(cor){
+    document.getElementById("fundo").style.backgroundColor = cor;
+  }
+</script>
+  
+</form>
+ </h3>
+
+</body>
+</html>
