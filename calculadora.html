@@ -1,76 +1,67 @@
 <html>
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
 <script>
+
 function soma(form1)
 {
    a=new Number(form1.t1.value);
    b=new Number(form1.t2.value);
    c=new Number(a+b);
-   alert("A soma dos números é:  "+c);
+   alert("A Soma dos Números é:  "+c);
 }
 </script>
 <script>
-  function subtração(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a-b);
-   alert("A subtração dos números é:  "+c);
-}
+  function mudarBody(cor){
+      document.getElementById("fundo").style.background = cor;
+  }
 </script>
-<script>
-  function multiplicação(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a*b);
-   alert("A multiplicação dos números é:  "+c);
-}
-</script>
-<script>
-  function divisão(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a/b);
-   alert("A divisão dos números é:  "+c);
-}
-</script>
+
+
+</body>
 </head>
 
-<style>
-  body{
-    color: azure;
-  }
-</style>
-<body background="https://static.wixstatic.com/media/87b4fe_b80130286a8e4a0b8a4a0e68e62c624f~mv2.gif">
+<body id="fundo">
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-<center><h1 class="alert alert-dark">Calculadora <br><br> </h1>
+  <div class="card-body"></div>
+    <center><h1 class="card-title">Calculadora <br><br> </h1>
+  </div>
+
+      <h3 class="card-title"> 
+    Digite um Número:
+    <form name="form1">
+      <input type="text" name="t1"><br>
+      Digite outro Número:<br>
+      <input type="text" name="t2"><br><br>
+      <input type="button" name="b1" value="+" onClick="soma(form1)">
+      <input type="button" name="b2" value="-">
+      <input type="button" name="b3" value="*">
+      <input type="button" name="b4" value="/">
+      <br><br>
+      Escolha a Cor da HomePage:<br>
+
+      <input type="button" value="Azul" id="fundoazul" name="azul" onclick="mudarBody('blue')">
+      <input type="button" value="Verde" id="fundoverde" name="verde" onclick="mudarBody('green')">
+      <input type="button" value="Vermelho" id="fundovermelho" name="vermelho" onclick="mudarBody('red')">
+      <input type="button" value="Amarelo" id="fundoamarelo" name="amarelo" onclick="mudarBody('yellow')">
+    </center>
+
+
+      
+
+
   
-  
-  <h3>
-Digite um número
-<form name="form1">
-  <input type="text" name="t1"><br>
-  Digite outro número<br>
-  <input type="text" name="t2"><br><br>
-  <input type="button" name="b1" value="+" onClick="soma(form1)">
-  <input type="button" name="b2" value="-" onclick="subtração(form1)">
-  <input type="button" name="b3" value="*" onclick="multiplicação(form1)">
-  <input type="button" name="b4" value="/" onclick="divisão(form1)">
-  <br><br>
 </form>
  </h3>
+ 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
