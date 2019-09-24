@@ -1,68 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-</head>
-<body onload="escreverMensagem()" id="fundo">
-<script>
-  function soma(form1)
-  {
-    a=new Number(form1.t1.value);
-    b=new Number(form1.t2.value);
-    c=new Number(a+b);
-    alert("A soma dos números é:  "+c);
-  }
-  function sub(form1)
-  {
-    e=new Number(form1.t1.value);
-    f=new Number(form1.t2.value);
-    g=new Number(e-f);
-    alert("A subtração dos números é: "+g);
-  }
-  function mult(form1)
-  {
-    h=new Number(form1.t1.value);
-    i=new Number(form1.t2.value);
-    j=new Number(h*i);
-    alert("A multiplicação dos números é: "+j);
-  }
-  function div(form1)
-  {
-    l=new Number(form1.t1.value);
-    m=new Number(form1.t2.value);
-    n=new Number(l/m);
-    alert("A divisão dos números é: "+n);
-  }
-  function cor(cor){
-    document.getElementById("bg").style.backgroundColor=cor;
-  }
-  var titleText=document.title;
-  function titleMarquee(){
-    titleText=titleText.substring(1,titleText.length)+titleText.substring(0,1);
-    document.title=titleText;
-    setTimeout("titleMarquee()",200);
-  }
-  function mudarBody(cor){
-            document.getElementById("fundo").style.backgroundColor=cor;
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <script>
+        function soma(form1)
+        {
+           a=new Number(form1.t1.value);
+           b=new Number(form1.t2.value);
+           c=new Number(a+b);
+           alert("A soma dos numeros :  "+c);
         }
-</script>
-  <center><h1 class="animated infinite tada delay-1s">Calculadora</h1>
-  <h3>Digite um número:</h3>
-    <form name="form1">
-      <input type="text" name="t1"><h4>Digite outro número:</h4> 
-      <input type="text" name="t2"><br><br>
-      <input type="button" name="b1" value="+" onClick="soma(form1)" class="botao">
-      <input type="button" name="b2" value="-" onClick="sub(form1)" class="botao">
-      <input type="button" name="b3" value="*" onClick="mult(form1)" class="botao">
-      <input type="button" name="b4" value="/" onClick="div(form1)" class="botao">
-      <br><br>
-      <p><b>Altere as cores:</b></p>
-      <input type="button" value="Mude a cor de fundo para verde" id="fundoVerde" name="fundoVerde" onclick="mudarBody('Green')"/>
-    
-      <input type="button" value="Mude a cor de fundo para azul" id="fundoazul" name="fundoAzul" onclick="mudarBody('Blue')"/>
-      
-      <input type="button" value="Mude a cor de fundo para vermelho" id="fundovermelho" name="fundovermelho" onclick="mudarBody('Red')"/></br>
-      
-    </form>
-  </h3>
-</body>
+        function sub(form1)
+        {
+           a=new Number(form1.t1.value);
+           b=new Number(form1.t2.value);
+           c=new Number(a-b);
+           alert("A subitraçao dos numeros :  "+c);
+        }
+        function mult(form1)
+        {
+           a=new Number(form1.t1.value);
+           b=new Number(form1.t2.value);
+           c=new Number(a*b);
+           alert("A multiplicação dos numeros :  "+c);
+        }
+        function div(form1)
+        {
+           a=new Number(form1.t1.value);
+           b=new Number(form1.t2.value);
+           c=new Number(a/b);
+           alert("A divisão dos numeros :  "+c);
+        }
+         
+        function mudarBody(cor){
+
+            document.getElementById("fundo").style.backgroundColor = cor;
+        }
+    </script>
+    <style>
+        .container{
+            width: 500px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: #fff
+        }
+    </style>
+  </head>
+  <body id="fundo">
+    <div class="container text-center">
+        <h1 class="shadow-lg p-3 mb-5 bg-white rounded">Calculadora</h1>
+        <h3 >Digite um numero:</h3>
+        <form name="form1" >
+            <input type="text" name="t1" class="form-control mt-4" >
+            <h3>Digite outro numero:</h3>
+            <input type="text" name="t2" class="form-control mt-4" >
+            <input type="button" name="b1" value="+" onClick="soma(form1)" class="btn btn-outline-info mt-3 ml-1 " >
+            <input type="button" name="b2" value="-"  onClick="sub(form1)" class="btn btn-outline-info mt-3 ml-1" > 
+            <input type="button" name="b3" value="*" onClick="mult(form1)" class="btn btn-outline-info mt-3 ml-1" >
+            <input type="button" name="b4" value="/" onClick="div(form1)" class="btn btn-outline-info mt-3 ml-1" >
+            
+            <h2 class="mb-2">Escolha a cor da HomePage:</h2>
+            
+            <input type="button" value="Preto" id="fundoPreto" name="fundoPreto" onclick="mudarBody('black')" class="btn btn-outline-dark mt-3 ml-1"/>
+            <input type="button" value="Azul" id="fundoAzul" name="fundoAzul" onclick="mudarBody('blue')" class="btn btn-outline-primary mt-3 ml-1"/>
+            <input type="button" value="Dourado" id="fundoDourado" name="fundoDourado" onclick="mudarBody('gold')" class="btn btn-outline-warning mt-3 ml-1"/>
+            <input type="button" value="Vermelho" id="fundoRosa" name="fundoRosa" onclick="mudarBody('red')" class="btn btn-outline-danger mt-3 ml-1"/>
+        </form>
+    </div>   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
