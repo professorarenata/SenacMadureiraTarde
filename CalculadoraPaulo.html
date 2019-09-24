@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<center><body onload="Data()" id="fundo">
+<form method="POST">
+    <header>
+            <h1>Calculadora</h1>    
+    </header>
+    
+    
+
+
+
+
+    
+   
+            <br><br><label for="numero1"><b>Digite um número:</b></label> <br>
+
+        <input type="text" id="numero1" name="numero1" class="form-control col-md-2"  pattern="[0-6]{1,}" required maxlength="6" title="máximo de caracteres 6"/><br>
+
+                    
+            
+            <label for="numero2"><b>Digite outro número:</b></label><br>
+    
+        <input type="text" id="numero2" name="numero2" class="form-control col-md-2"  pattern="[0-6]{1,}" required maxlength="6" title="máximo de caracteres 6"/><br><br>
+
+
+        <input type="button" value="+" class="btn btn-outline-dark" id="soma" name="soma" onclick="somap()"/>
+
+        <input type="button" value="-" class="btn btn-outline-dark" id="subtracao" name="subtracao" onclick="subtracaop()"/>
+
+        <input type="button" value="*" class="btn btn-outline-dark" id="multiplicacao" name="multiplicacao" onclick="multiplicacaop()"/>
+
+        <input type="button" value="/" class="btn btn-outline-dark" id="divisao" name="divisao" onclick="divisaop()"/>
+
+        
+
+</form>
+
+
+    <h2>Mude a cor da tela</h2>
+
+
+            
+    <input type="button" value="Amarelo" class="btn btn-warning" id="cor1" name="cor4" onclick="cores('Yellow')"/>
+        
+    <input type="button" value="Azul" class="btn btn-primary" id="cor2" name="cor2" onclick="cores('blue')"/>
+
+    <input type="button" value="Vermelho" class="btn btn-danger" id="cor3" name="cor1" onclick="cores('red')"/>
+
+    <input type="button" value="Branco" class="btn btn-light" id="cor4" name="cor3"  onclick="cores('#fff')"/>
+    
+
+
+
+<script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script></script>
+</body></center>
+<script>
+
+    
+
+    function cores(cor){
+            document.getElementById("fundo").style.backgroundColor=cor;
+    }
+    
+
+    
+    function somap(){
+        var numero1=parseFloat(document.getElementById("numero1").value);
+        var numero2=parseFloat(document.getElementById("numero2").value);
+        var soma=(numero1+numero2);
+            document.getElementById("posoma").innerHTML= alert("A soma dos números é: "+soma);
+           
+    }
+    
+    function subtracaop(){
+        var numero1=parseFloat(document.getElementById("numero1").value);
+        var numero2=parseFloat(document.getElementById("numero2").value);
+        var subtracao=parseFloat(numero1-numero2);
+            document.getElementById("posubtracao").innerHTML=alert("A subtração dos números é: "+subtracao);
+    }
+    
+    function multiplicacaop(){
+        var numero1=parseFloat(document.getElementById("numero1").value);
+        var numero2=parseFloat(document.getElementById("numero2").value);
+        var multiplicacao=parseFloat(numero1*numero2);
+            document.getElementById("pomultiplicacao").innerHTML=alert("A multiplicação dos números é: "+multiplicacao);     
+    }
+    
+    function divisaop(){
+        var numero1=parseFloat(document.getElementById("numero1").value);
+        var numero2=parseFloat(document.getElementById("numero2").value);
+        var divisao=parseFloat(numero1/numero2);
+            document.getElementById("podivisao").innerHTML=alert("A divisão dos números é: "+divisao);
+    }
+    
+
+</script>
+</html>
