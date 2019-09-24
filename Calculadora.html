@@ -1,0 +1,131 @@
+<html> 
+        <head>
+            <title>Calculadora</title>
+            <style type="text/css">
+                table{
+                text-align: center;
+                }
+                .button {
+                background-color: rgba(250, 66, 66, 0.897);
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            .button2 {background-color: #008CBA;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                }
+            .button3 {background-color: #ffbb00;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                }
+            .button4 {background-color: #ff57e3;
+                border: none;
+                color: rgb(255, 255, 255);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            h1 {
+                 color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            }
+            h3 {
+                 color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            }
+
+        </style>
+        </head>
+        <body id="fundo"> 
+           <div class align = "middle"><h1><b>Calculadora</b></h1></div> <br>
+           <table border="4" align="center"> 
+              <tr> 
+                 <td colspan="3"><input type="text" id="resultado"/> </td> 
+                 <td><input type="button" value="C" onclick="clr()"/> </td> 
+              </tr> 
+              <tr> 
+                 <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+                 <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+                 <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+                 <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+              </tr> 
+              <tr> 
+                 <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+                 <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+                 <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+                 <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+              </tr> 
+              <tr> 
+                 <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+                 <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+                 <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+                 <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+              </tr> 
+               <tr>
+                 <td><input type="button" value="." onclick="dis('.')"/> </td> 
+                 <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+                 <td><input type="button" value="=" onclick="solve()"/> </td> 
+                 <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+              </tr> 
+           </table>
+            <script>
+                function dis(val) 
+                { 
+                    document.getElementById("resultado").value+=val 
+                } 
+                function solve() 
+                { 
+                    let x = document.getElementById("resultado").value 
+                    let y = eval(x) 
+                    document.getElementById("resultado").value = y 
+                } 
+                function clr() 
+                { 
+                    document.getElementById("resultado").value = "" 
+                } 
+                function mudarBody(cor){
+
+                    document.getElementById("fundo").style.backgroundColor = cor;
+                }
+             </script>
+             
+        <h3 title align = "middle">Escolha a cor da HomePage:</h3>
+
+        <div class  title align = "center">
+        <input type="button" class = "button"  value="Vermelho" id="fundoVermelho" name="fundoVermelho" onclick="mudarBody('red')"/>
+        <input type="button" class = "button2" value="Azul" id="fundoAzul" name="fundoAzul" onclick="mudarBody('blue')"/>
+        <input type="button" class = "button3" value="Dourado" id="fundoDourado" name="fundoDourado" onclick="mudarBody('gold')"/>
+        <input type="button" class = "button4" value="Rosa" id="fundoRosa" name="fundoRosa" onclick="mudarBody('pink')"/>
+        </div>
+
+        </body> 
+     </html>    
