@@ -1,67 +1,92 @@
 <html>
 <head>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
-<script>
 
-function soma(form1)
-{
-   a=new Number(form1.t1.value);
-   b=new Number(form1.t2.value);
-   c=new Number(a+b);
-   alert("A Soma dos Números é:  "+c);
-}
-</script>
+<style>
+  header{
+    background-color:#09f;
+  }
+</style>
 <script>
+  function soma(form1)
+  {
+    a=new Number(form1.t1.value);
+    b=new Number(form1.t2.value);
+    c=new Number(a+b);
+    alert("A soma dos números é:  "+c);
+  }
+  function subtração(form1)
+  {
+    d=new Number(form1.t1.value);
+    e=new Number(form1.t2.value);
+    f=new Number(d-e);
+    alert("A subtração dos números é:  "+f);
+  }
+  function multiplicação(form1)
+  {
+    g=new Number(form1.t1.value);
+    h=new Number(form1.t2.value);
+    i=new Number(g*h);
+    alert("A multiplicação dos números é:  "+i);
+  }
+  function divisão(form1)
+  {
+    j=new Number(form1.t1.value);
+    k=new Number(form1.t2.value);
+    l=new Number(j/k);
+    alert("A divisão dos números é:  "+l);
+  }
   function mudarBody(cor){
-      document.getElementById("fundo").style.background = cor;
+    document.getElementById("fundo").style.backgroundColor = cor;
   }
 </script>
-
-
-</body>
 </head>
 
 <body id="fundo">
+  <center>
+  <Header>
+    <h1> Calculadora  </h1>
+  </Header>
+  <h3>
+  Digite um número:
+  <form name="form1">
+    <input type="text" name="t1"><br>
+  Digite outro número:<br>
+    <input type="text" name="t2"><br><br>
+    
+    <input type="button" name="b1" value="+" onClick="soma(form1)">
+    <input type="button" name="b2" value="-" onClick="subtração(form1)">
+    <input type="button" name="b3" value="*" onClick="multiplicação(form1)">
+    <input type="button" name="b4" value="/" onClick="divisão(form1)">
+    <br><br>
+    Escolha a cor da HomePage:<br>
 
-  <div class="card-body"></div>
-    <center><h1 class="card-title">Calculadora <br><br> </h1>
-  </div>
+    <input class="alert alert-danger" type="button" value="Vermelho" id="fundoVermelho" name="fundoVermelho"
+    onclick="mudarBody('red')"  />
 
-      <h3 class="card-title"> 
-    Digite um Número:
-    <form name="form1">
-      <input type="text" name="t1"><br>
-      Digite outro Número:<br>
-      <input type="text" name="t2"><br><br>
-      <input type="button" name="b1" value="+" onClick="soma(form1)">
-      <input type="button" name="b2" value="-">
-      <input type="button" name="b3" value="*">
-      <input type="button" name="b4" value="/">
-      <br><br>
-      Escolha a Cor da HomePage:<br>
+    <input class="alert alert-primary" type="button" value="Azul" id="fundoAzul" name="fundoAzul"
+    onclick="mudarBody('blue')"  />
 
-      <input type="button" value="Azul" id="fundoazul" name="azul" onclick="mudarBody('blue')">
-      <input type="button" value="Verde" id="fundoverde" name="verde" onclick="mudarBody('green')">
-      <input type="button" value="Vermelho" id="fundovermelho" name="vermelho" onclick="mudarBody('red')">
-      <input type="button" value="Amarelo" id="fundoamarelo" name="amarelo" onclick="mudarBody('yellow')">
-    </center>
+    <input class="alert alert-warning" type="button" value="Dourado" id="fundoDourado" name="fundoDourado"
+    onclick="mudarBody('gold')"  />
 
+    <input class="alert alert-success" type="button" value="Verde" id="fundoVerde" name="fundoVerde"
+    onclick="mudarBody('green')"  />
 
-      
+  </center>  
+  </form>
+  </h3>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  
-</form>
- </h3>
- 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
