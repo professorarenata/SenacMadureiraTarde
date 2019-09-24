@@ -1,0 +1,101 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+<script>
+function soma(form1)
+{
+   a=new Number(form1.valor1.value);
+   b=new Number(form1.valor2.value);
+   c=new Number(a+b);
+   alert("A soma dos números ?:  "+c);
+}
+function subtrair(form1){
+  a=new Number(form1.valor1.value);
+   b=new Number(form1.valor2.value);
+   c=new Number(a-b);
+   alert("A subtração dos números ?:  "+c);
+}function multiplicar(form1){
+  a=new Number(form1.valor1.value);
+   b=new Number(form1.valor2.value);
+   c=new Number(a*b);
+   alert("A multiplicação dos números ?:  "+c);
+}function divisão(form1){
+  a=new Number(form1.valor1.value);
+   b=new Number(form1.valor2.value);
+   c=new Number(a/b);
+   alert("A divisão dos números ?:  "+c);
+}
+</script>
+</head>
+
+<body id="fundo">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+  <center><h1>Calculadora <br><br> </h1>
+  <h3>
+Digite um número: 
+<form name=form1> <br>
+
+  <input type="text" name="valor1" 
+    pattern="[0-9]" required> <br> <br>
+ 
+
+Digite Outro número : <br> <br>
+
+  <input type="text" name="valor2" 
+   pattern="[0-9]" required> <br> <br>
+  
+  <input type="button" value="+" name="b1" 
+   onclick="soma(form1)" >
+  <input type="button" value="-" name="b2" 
+  onclick="subtrair(form1)" >
+  <input type="button" value="*" name="b3" 
+  onclick="multiplicar(form1)" >
+  <input type="button" value="/" name="b4" 
+  onclick="divisão(form1)">
+ 
+  
+  </form>
+  
+</h3>
+
+ 
+ <h3>Escolha a cor da HomePage:</h3><br>
+ <form>
+  <input type="button" value="Azul" name="fundoAzul" 
+  id="fundoAzul" onclick="mudarBody('blue')">
+
+  <input type="button" value="Verde" name="fundoVerde" 
+  id="fundoVerde" onclick="mudarBody('green')">
+
+  <input type="button" value="Amarelo" name="fundoAmarelo" 
+  id="fundoAmarelo" onclick="mudarBody('yellow')">
+
+  <input type="button" value="Vermelho" name="fundoVermelho" 
+  id="fundoVermelho" onclick="mudarBody('red')">
+
+</form>
+
+ 
+
+ <script>
+  function mudarBody(cor){
+      document.getElementById("fundo").style.background = cor;
+  
+  
+  }
+</script>
+</body>
+</html>
